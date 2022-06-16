@@ -19,6 +19,7 @@ function App() {
     <div className='App'>
       <Header />
       <Feeling />
+      <p>Feel state: </p>
     </div>
   );
 }

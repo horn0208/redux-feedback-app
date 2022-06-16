@@ -12,6 +12,7 @@ const feelReducer = (state=0, action) =>{
     if (action.type === 'CHANGE_FEEL'){
         state = action.payload;
     }
+    console.log('feelReducer:',state);
     return state;
 }
 
