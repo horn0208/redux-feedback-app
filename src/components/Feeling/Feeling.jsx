@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
@@ -29,7 +29,6 @@ function Feeling( props ){
             <h3>Feeling?</h3>
             <input type="number" onChange={handleChange}/>
             <button onClick={handleClick} >Next</button>
-            <p>Props: { JSON.stringify( props ) }</p>
         </div>
     );
 }
