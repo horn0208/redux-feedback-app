@@ -20,7 +20,7 @@ function Understanding( props ){
             <h2>How well are you understanding the content?</h2>
             <h3>Understanding?</h3>
             <input type="number" onChange={handleChange}/>
-            <button onClick={handleClick}>Next</button>
+            <button onClick={handleClick}><a href='/#/support'>Next</a></button>
             <p>Props: { JSON.stringify( props ) }</p>
         </div>
     );
