@@ -1,18 +1,26 @@
 import { useState } from 'react';
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function Support( props ){
     // support hook
     const [ support, setSupport ] = useState( 0 );
+
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleChange =()=>{
-        setSupport(event.target.value);
+        setSupport(Number(event.target.value)); 
     }
 
     const handleClick =()=>{
         console.log('in support handleClick:', support);
-        dispatch({type: "CHANGE_SUPPORT", payload: support});
+        if(support>=1 && support<=5 && support !==''){
+            dispatch({type: "CHANGE_SUPPORT", payload: support});
+            history.push('/comments');
+        } else {
+            alert('Please enter a whole number between 1-5');
+        }
     }
      
     return(
@@ -20,8 +28,7 @@ function Support( props ){
             <h2>How well are you being supported?</h2>
             <h3>Support?</h3>
             <input type="number" onChange={handleChange}/>
-            <button onClick={handleClick}><a href='/#/comments'>Next</a></button>
-            <p>Props: { JSON.stringify( props ) }</p>
+            <button onClick={handleClick} >Next</button>
         </div>
     );
 }
