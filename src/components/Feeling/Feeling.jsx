@@ -20,7 +20,7 @@ function Feeling( props ){
             <h2>How are you feeling today?</h2>
             <h3>Feeling?</h3>
             <input type="number" onChange={handleChange}/>
-            <button onClick={handleClick}>Next</button>
+            <button onClick={handleClick} ><a href='/#/understanding'>Next</a></button>
             <p>Props: { JSON.stringify( props ) }</p>
         </div>
     );

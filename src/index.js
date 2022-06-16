@@ -28,13 +28,21 @@ const supportReducer = (state=0, action) =>{
     console.log('supportReducer:',state);
     return state;
 }
+const commentReducer = (state=0, action) =>{
+    if (action.type === 'CHANGE_COMMENT'){
+        state = action.payload;
+    }
+    console.log('commentReducer:',state);
+    return state;
+}
 
 // Create store, combine reducers
 const store = createStore(
     combineReducers({
         feelReducer,
         understandReducer,
-        supportReducer
+        supportReducer,
+        commentReducer
     })
 )
 

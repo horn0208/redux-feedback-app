@@ -18,11 +18,30 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      {/* <Feeling /> */}
-      {/* <Understanding /> */}
-      <Support />
+      <HashRouter>
+        <Route path="/" exact>
+          <Feeling />
+        </Route>
+        <Route path="/understanding">
+          <Understanding />
+        </Route>
+        <Route path="/support">
+          <Support />
+        </Route>
+        <Route path="/comments">
+          <Comments />
+        </Route>
+
+      </HashRouter>
+      
     </div>
   );
 }
 
 export default App;
+
+
+{/* <Feeling /> */}
+      {/* <Understanding /> */}
+      {/* <Support /> */}
+      {/* <Comments /> */}
