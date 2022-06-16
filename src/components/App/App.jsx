@@ -19,7 +19,8 @@ function App() {
     <div className='App'>
       <Header />
       {/* <Feeling /> */}
-      <Understanding />
+      {/* <Understanding /> */}
+      <Support />
     </div>
   );
 }

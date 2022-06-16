@@ -8,7 +8,6 @@ import {Provider} from 'react-redux';
 
 // Reducers:
 const feelReducer = (state=0, action) =>{
-    console.log('in feelReducer:', action);
     if (action.type === 'CHANGE_FEEL'){
         state = action.payload;
     }
@@ -16,20 +15,26 @@ const feelReducer = (state=0, action) =>{
     return state;
 }
 const understandReducer = (state=0, action) =>{
-    console.log('in understandReducer:', action);
     if (action.type === 'CHANGE_UNDERSTAND'){
         state = action.payload;
     }
     console.log('understandReducer:',state);
     return state;
 }
-
+const supportReducer = (state=0, action) =>{
+    if (action.type === 'CHANGE_SUPPORT'){
+        state = action.payload;
+    }
+    console.log('supportReducer:',state);
+    return state;
+}
 
 // Create store, combine reducers
 const store = createStore(
     combineReducers({
         feelReducer,
-        understandReducer
+        understandReducer,
+        supportReducer
     })
 )
 
