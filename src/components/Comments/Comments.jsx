@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function Comments( props ){
     // template hook
     const [ comment, setComment ] = useState( '' );
+
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleChange =()=>{
         setComment(event.target.value);
@@ -13,6 +16,7 @@ function Comments( props ){
     const handleClick =()=>{
         console.log('in comments handleClick:', comment);
         dispatch({type: "CHANGE_COMMENT", payload: comment});
+        history.push('/review')
     }
      
     return(
@@ -21,7 +25,6 @@ function Comments( props ){
             <h3>Comments?</h3>
             <input type="text" onChange={handleChange}/>
             <button onClick={handleClick}>Next</button>
-            <p>Props: { JSON.stringify( props ) }</p>
         </div>
     );
 }

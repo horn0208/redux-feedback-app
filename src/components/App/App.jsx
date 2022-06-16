@@ -31,7 +31,9 @@ function App() {
         <Route path="/comments">
           <Comments />
         </Route>
-
+        <Route path="/review">
+          <Review />
+        </Route>
       </HashRouter>
       
     </div>
