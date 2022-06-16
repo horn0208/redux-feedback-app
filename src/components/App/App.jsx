@@ -18,8 +18,8 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <Feeling />
-      <p>Feel state: </p>
+      {/* <Feeling /> */}
+      <Understanding />
     </div>
   );
 }

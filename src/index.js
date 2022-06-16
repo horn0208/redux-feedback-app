@@ -15,12 +15,21 @@ const feelReducer = (state=0, action) =>{
     console.log('feelReducer:',state);
     return state;
 }
+const understandReducer = (state=0, action) =>{
+    console.log('in understandReducer:', action);
+    if (action.type === 'CHANGE_UNDERSTAND'){
+        state = action.payload;
+    }
+    console.log('understandReducer:',state);
+    return state;
+}
 
 
 // Create store, combine reducers
 const store = createStore(
     combineReducers({
-        feelReducer
+        feelReducer,
+        understandReducer
     })
 )
 
