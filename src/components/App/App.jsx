@@ -12,7 +12,6 @@ import Understanding from '../Understanding/Understanding';
 
 
 
-
 function App() {
 
   return (
