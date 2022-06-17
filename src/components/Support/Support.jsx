@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+// material ui style imports:
+import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Support( props ){
     // support hook
@@ -24,14 +30,27 @@ function Support( props ){
     }
      
     return(
-        <div>
-            <h2>How well are you being supported?</h2>
-            <h3>Support?</h3>
-            <input type="number" onChange={handleChange}/>
-            <br />
-            <button onClick={history.goBack} >Back</button>
-            <button onClick={handleClick} >Next</button>
-        </div>
+        <Paper className='paper' elevation={3}>
+        <h2>How well are you being supported?</h2>
+        <TextField
+            label="Support (1-5)?"
+            size='small'
+            variant='standard'
+            onChange={handleChange}/>
+        <br />
+        <IconButton
+            aria-label='back'
+            color='primary'
+            onClick={history.goBack} >
+            <ArrowBackIcon/>
+            </IconButton>
+        <IconButton 
+            aria-label='next'
+            color='primary'
+            onClick={handleClick} >
+            <ArrowForwardIcon/>
+        </IconButton>
+    </Paper>
     );
 }
 
