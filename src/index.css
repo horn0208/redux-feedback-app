@@ -10,3 +10,11 @@
   margin: auto;
   padding: 50px;
 }
+
+h2, h3 {
+  padding: 10px;
+}
+
+.app-title {
+  font-size: large;
+}
