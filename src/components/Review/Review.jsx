@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
@@ -6,7 +6,7 @@ import axios from 'axios';
 function Review( props ){
 
     const history = useHistory();
-
+    // access all the reducer states from the store
     const feelReducer = useSelector(store => store.feelReducer);
     const understandReducer = useSelector(store => store.understandReducer);
     const supportReducer = useSelector(store => store.supportReducer);
@@ -26,7 +26,8 @@ function Review( props ){
             }
         }).then((response)=>{
             console.log(response);
-            // if post is successful, history.push('/success')
+            // if post is successful, go to next view 
+            history.push('/success')
 
         }).catch((err)=>{
             console.log(err);

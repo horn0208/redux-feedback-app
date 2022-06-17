@@ -10,6 +10,8 @@ import {Provider} from 'react-redux';
 const feelReducer = (state=0, action) =>{
     if (action.type === 'CHANGE_FEEL'){
         state = action.payload;
+    } else if (action.type === 'RESET'){
+        state = 0;
     }
     console.log('feelReducer:',state);
     return state;
@@ -17,6 +19,8 @@ const feelReducer = (state=0, action) =>{
 const understandReducer = (state=0, action) =>{
     if (action.type === 'CHANGE_UNDERSTAND'){
         state = action.payload;
+    } else if (action.type === 'RESET'){
+        state = 0;
     }
     console.log('understandReducer:',state);
     return state;
@@ -24,6 +28,8 @@ const understandReducer = (state=0, action) =>{
 const supportReducer = (state=0, action) =>{
     if (action.type === 'CHANGE_SUPPORT'){
         state = action.payload;
+    } else if (action.type === 'RESET'){
+        state = 0;
     }
     console.log('supportReducer:',state);
     return state;
@@ -31,6 +37,8 @@ const supportReducer = (state=0, action) =>{
 const commentReducer = (state=0, action) =>{
     if (action.type === 'CHANGE_COMMENT'){
         state = action.payload;
+    } else if (action.type === 'RESET'){
+        state = 0;
     }
     console.log('commentReducer:',state);
     return state;

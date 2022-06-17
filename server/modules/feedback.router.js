@@ -1,7 +1,6 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-// might be missing a line here
 
 // POST to database
 router.post('/', (req, res)=>{

@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import {useHistory} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 
 function Success( props ){
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const handleClick=()=>{
-        //NEED TO RESET STATE IN REDUCERS HERE before history.push
-
+        //reset states in all reducers before returning to start page
+        dispatch({type: 'RESET'});
         history.push('/')
     }
      

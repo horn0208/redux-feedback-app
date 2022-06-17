@@ -3,7 +3,6 @@ import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 function Comments( props ){
-    // template hook
     const [ comment, setComment ] = useState( '' );
 
     const dispatch = useDispatch();

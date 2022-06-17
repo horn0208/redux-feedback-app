@@ -11,11 +11,7 @@ import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Success from '../Success/Success';
 
-
-
 function App() {
-
-
   return (
     <div className='App'>
       <Header />
@@ -39,15 +35,8 @@ function App() {
           <Success />
         </Route>
       </HashRouter>
-      
     </div>
   );
 }
 
 export default App;
-
-
-{/* <Feeling /> */}
-      {/* <Understanding /> */}
-      {/* <Support /> */}
-      {/* <Comments /> */}
