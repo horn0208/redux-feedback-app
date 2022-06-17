@@ -28,6 +28,8 @@ function Support( props ){
             <h2>How well are you being supported?</h2>
             <h3>Support?</h3>
             <input type="number" onChange={handleChange}/>
+            <br />
+            <button onClick={history.goBack} >Back</button>
             <button onClick={handleClick} >Next</button>
         </div>
     );

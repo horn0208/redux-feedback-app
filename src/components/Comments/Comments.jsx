@@ -23,7 +23,9 @@ function Comments( props ){
             <h2>Any comments you want to leave?</h2>
             <h3>Comments?</h3>
             <input type="text" onChange={handleChange}/>
-            <button onClick={handleClick}>Next</button>
+            <br />
+            <button onClick={history.goBack} >Back</button>
+            <button onClick={handleClick} >Next</button>
         </div>
     );
 }
