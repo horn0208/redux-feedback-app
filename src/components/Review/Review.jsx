@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 function Review( props ){
-    // template hook, may remove
-    let [ allResponses, setAllResponses ] = useState( {} );
+
+    const history = useHistory();
 
     const feelReducer = useSelector(store => store.feelReducer);
     const understandReducer = useSelector(store => store.understandReducer);
@@ -15,7 +15,7 @@ function Review( props ){
         console.log('in handleClick');
         //POST request to send reducer values to database
 
-        //then clear out state of reducers
+        // if post is successful, history.push('/success')
     }
 
  

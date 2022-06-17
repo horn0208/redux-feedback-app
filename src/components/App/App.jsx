@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Review from '../Review/Review';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
+import Success from '../Success/Success';
 
 
 
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/review">
           <Review />
+        </Route>
+        <Route path ="/success">
+          <Success />
         </Route>
       </HashRouter>
       
