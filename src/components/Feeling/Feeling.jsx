@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+// material ui style imports:
+import Paper from '@mui/material/Paper';
 
 function Feeling( props ){
     // feelings hook
@@ -24,12 +26,12 @@ function Feeling( props ){
     }
      
     return(
-        <div>
+        <Paper className='paper' elevation={3}>
             <h2>How are you feeling today?</h2>
             <h3>Feeling?</h3>
             <input type="number" onChange={handleChange}/>
             <button onClick={handleClick} >Next</button>
-        </div>
+        </Paper>
     );
 }
 
