@@ -3,6 +3,9 @@ import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 // material ui style imports:
 import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Feeling( props ){
     // feelings hook
@@ -28,9 +31,17 @@ function Feeling( props ){
     return(
         <Paper className='paper' elevation={3}>
             <h2>How are you feeling today?</h2>
-            <h3>Feeling?</h3>
-            <input type="number" onChange={handleChange}/>
-            <button onClick={handleClick} >Next</button>
+            <TextField
+                label="Feeling (1-5)?"
+                size='small'
+                variant='standard'
+                onChange={handleChange}/>
+            <IconButton 
+                aria-label='next'
+                color='primary'
+                onClick={handleClick} >
+                <ArrowForwardIcon/>
+            </IconButton>
         </Paper>
     );
 }
