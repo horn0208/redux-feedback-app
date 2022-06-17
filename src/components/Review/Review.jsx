@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import axios from 'axios';
 
 function Review( props ){
 
@@ -12,11 +13,26 @@ function Review( props ){
     const commentReducer = useSelector(store => store.commentReducer);
 
     const handleClick=()=>{
-        console.log('in handleClick');
+        console.log('in handleClick post:');
         //POST request to send reducer values to database
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: {
+                feeling: feelReducer,
+                understanding: understandReducer,
+                support: supportReducer,
+                comments: commentReducer
+            }
+        }).then((response)=>{
+            console.log(response);
+            // if post is successful, history.push('/success')
 
-        // if post is successful, history.push('/success')
-    }
+        }).catch((err)=>{
+            console.log(err);
+            alert('Error saving feedback :(');
+        })
+    };
 
  
      
