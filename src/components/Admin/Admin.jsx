@@ -8,6 +8,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import IconButton from '@mui/material/IconButton';
+import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 
 function Admin( props ){
 
@@ -30,35 +32,41 @@ function Admin( props ){
         })
     }
 
+    const deleteClick=()=>{
+        console.log('in deleteClick:')
+    }
+
     return(
         <div>
             <h2>Feedback Results</h2>
             <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={{ minWidth: 300 }} aria-label="table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>ID</TableCell>
-                        <TableCell align="right">Feeling</TableCell>
-                        <TableCell align="right">Comprehension</TableCell>
-                        <TableCell align="right">Support</TableCell>
-                        <TableCell align="right">Comments</TableCell>
+                        <TableCell>Feeling</TableCell>
+                        <TableCell align="center">Comprehension</TableCell>
+                        <TableCell align="center">Support</TableCell>
+                        <TableCell align="center">Comments</TableCell>
                         <TableCell align="right">Delete</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {answers.map((row) => (
                         <TableRow
-                        key={row.id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                        <TableCell component="th" scope="row">
-                            {row.id}
+                            key={row.id}
+                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                        <TableCell component="th" scope="row">{row.feeling}</TableCell>
+                        <TableCell align="center">{row.understanding}</TableCell>
+                        <TableCell align="center">{row.support}</TableCell>
+                        <TableCell align="center">{row.comments}</TableCell>
+                        <TableCell align="right">
+                            <IconButton
+                                aria-label='delete'
+                                color='primary'
+                                onClick={deleteClick}>
+                                <DeleteSweepIcon/>
+                            </IconButton>
                         </TableCell>
-                        <TableCell align="right">{row.feeling}</TableCell>
-                        <TableCell align="right">{row.understanding}</TableCell>
-                        <TableCell align="right">{row.support}</TableCell>
-                        <TableCell align="right">{row.comments}</TableCell>
-                        <TableCell align="right">delete btn</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
