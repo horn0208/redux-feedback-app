@@ -10,6 +10,7 @@ import Review from '../Review/Review';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 
 function App() {
 
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <Route path ="/success">
           <Success />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
       </HashRouter>
     </div>

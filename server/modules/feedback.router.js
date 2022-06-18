@@ -16,4 +16,16 @@ router.post('/', (req, res)=>{
     })
 });
 
+// GET to database
+router.get('/', (req, res)=>{
+    console.log('in router GET');
+    const queryString = `SELECT * FROM feedback ORDER BY id DESC;`;
+    pool.query(queryString).then((result)=>{
+        res.send(result.rows);
+    }).catch((err)=>{
+        console.log(err);
+        res.sendStatus(500);
+    })
+});
+
 module.exports = router;

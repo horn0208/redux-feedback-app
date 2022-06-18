@@ -7,6 +7,7 @@ import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Tooltip from '@mui/material/Tooltip';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Review( props ){
 
@@ -49,6 +50,14 @@ function Review( props ){
             <p>Understanding: {understandReducer}</p>
             <p>Support: {supportReducer}</p>
             <p>Comments: {commentReducer}</p>
+            <Tooltip title="back">
+                <IconButton
+                    aria-label='back'
+                    color='primary'
+                    onClick={history.goBack} >
+                    <ArrowBackIcon/>
+                </IconButton>
+            </Tooltip>
             <Tooltip title="submit">
                 <IconButton 
                     aria-label='submit'

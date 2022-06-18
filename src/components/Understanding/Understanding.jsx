@@ -43,7 +43,7 @@ function Understanding( props ){
             color='primary'
             onClick={history.goBack} >
             <ArrowBackIcon/>
-            </IconButton>
+        </IconButton>
         <IconButton 
             aria-label='next'
             color='primary'

@@ -16,3 +16,5 @@ CREATE TABLE "feedback" (
 -- Sample feedback item
 INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
 VALUES (4, 4, 5, 'Doing Great!');
+-- GET all responses
+SELECT * FROM feedback ORDER BY id DESC;
