@@ -32,8 +32,8 @@ function Admin( props ){
         })
     }
 
-    const deleteClick=()=>{
-        console.log('in deleteClick:')
+    const deleteItem=(itemID)=>{
+        console.log('in deleteClick:', itemID)
     }
 
     return(
@@ -63,7 +63,7 @@ function Admin( props ){
                             <IconButton
                                 aria-label='delete'
                                 color='primary'
-                                onClick={deleteClick}>
+                                onClick={()=>deleteItem(row.id)}>
                                 <DeleteSweepIcon/>
                             </IconButton>
                         </TableCell>
