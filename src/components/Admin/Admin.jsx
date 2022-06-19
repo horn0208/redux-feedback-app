@@ -47,7 +47,17 @@ function Admin( props ){
     const deleteItem=()=>{
         console.log('in deleteItem:', idToDelete);
         // DELETE request
-
+        axios.delete(`/feedback/delete?id=${idToDelete}`).then((response)=>{
+            console.log(response.data);
+            // GET feedback from database and display
+            fetchAnswers();
+            // reset idToDelete to be safe
+            setIdToDelete(0);
+        }).catch((err)=>{
+            console.log(err);
+            alert('Error deleting feedback item');
+        })
+        // close modal
         handleClose();
     }
 

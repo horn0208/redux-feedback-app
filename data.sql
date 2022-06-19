@@ -18,3 +18,5 @@ INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
 VALUES (4, 4, 5, 'Doing Great!');
 -- GET all responses
 SELECT * FROM feedback ORDER BY id DESC;
+-- DELETE by id
+DELETE FROM feedback WHERE id=6;
