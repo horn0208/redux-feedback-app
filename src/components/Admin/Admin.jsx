@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Admin.css'
 // mui table imports
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -70,9 +71,9 @@ function Admin( props ){
     const handleClose = () => {
         setOpen(false);
     };
-    // click handler for checkbox (flag/unflag item)
+    //for checkbox (flag/unflag item)
     const handleCheck=(itemID) =>{
-        console.log('in handleCheck:', event.target.checked, itemID);
+        console.log('in handleCheck:', itemID);
         // PUT request
         axios.put(`/feedback/flag?id=${itemID}`).then((response)=>{
             console.log(response.data);
@@ -88,7 +89,7 @@ function Admin( props ){
     return(
         <div>
             <h2>Feedback Results</h2>
-            <TableContainer component={Paper}>
+            <TableContainer className='table-paper' component={Paper}>
             <Table sx={{ minWidth: 300 }} aria-label="table">
                 <TableHead>
                     <TableRow>

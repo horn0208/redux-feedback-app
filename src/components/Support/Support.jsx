@@ -14,14 +14,16 @@ function Support( props ){
 
     const dispatch = useDispatch();
     const history = useHistory();
-
+    // set 'support' state to user's input
     const handleChange =()=>{
         setSupport(Number(event.target.value)); 
     }
 
     const handleClick =()=>{
         console.log('in support handleClick:', support);
+        // make sure input is 1-5 and not empty
         if(support>=1 && support<=5 && support !==''){
+            // if so, dispatch support to store and go to next view
             dispatch({type: "CHANGE_SUPPORT", payload: support});
             history.push('/comments');
         } else {

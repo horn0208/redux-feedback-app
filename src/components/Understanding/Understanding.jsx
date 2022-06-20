@@ -14,14 +14,16 @@ function Understanding( props ){
 
     const dispatch = useDispatch();
     const history = useHistory();
-
+    // set 'understand' state to user's input
     const handleChange =()=>{
         setUnderstand(Number(event.target.value)); 
     }
 
     const handleClick =()=>{
         console.log('in understand handleClick:', understand);
+        // make sure input is 1-5 and not empty
         if(understand>=1 && understand<=5 && understand !==''){
+            // if so, dispatch understand to store and go to next page
             dispatch({type: "CHANGE_UNDERSTAND", payload: understand});
             history.push('/support');
         } else {

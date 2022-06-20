@@ -13,17 +13,20 @@ function Feeling( props ){
 
     const dispatch = useDispatch();
     const history = useHistory();
-
+    // set 'feel' state to user's input
     const handleChange =()=>{
         setFeel(Number(event.target.value)); 
     }
 
     const handleClick =()=>{
         console.log('in feeling handleClick:', feel);
+        // make sure input is 1-5 and not empty
         if(feel>=1 && feel<=5 && feel !==''){
+            // if so, dispatch feel to store and got to next view
             dispatch({type: "CHANGE_FEEL", payload: feel});
             history.push('/understanding');
         } else {
+            // if not, tell user to fix it
             alert('Please enter a whole number between 1-5');
         }
     }

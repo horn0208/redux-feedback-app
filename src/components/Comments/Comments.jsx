@@ -14,10 +14,11 @@ function Comments( props ){
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // update 'comment' state to hold user's input
     const handleChange =()=>{
         setComment(event.target.value);
     }
-    
+    // dispatch comment to store and go to next view
     const handleClick =()=>{
         console.log('in comments handleClick:', comment);
         dispatch({type: "CHANGE_COMMENT", payload: comment});
