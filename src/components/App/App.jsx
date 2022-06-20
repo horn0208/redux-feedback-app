@@ -16,24 +16,30 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
+      
       <HashRouter>
         <Route path="/" exact>
+          <Header />
           <Feeling />
         </Route>
         <Route path="/understanding">
+          <Header />
           <Understanding />
         </Route>
         <Route path="/support">
+          <Header />
           <Support />
         </Route>
         <Route path="/comments">
+          <Header />
           <Comments />
         </Route>
         <Route path="/review">
+          <Header />
           <Review />
         </Route>
         <Route path ="/success">
+          <Header />
           <Success />
         </Route>
         <Route path="/admin">
