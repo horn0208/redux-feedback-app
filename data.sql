@@ -20,3 +20,5 @@ VALUES (4, 4, 5, 'Doing Great!');
 SELECT * FROM feedback ORDER BY id DESC;
 -- DELETE by id
 DELETE FROM feedback WHERE id=6;
+-- PUT toggle flagged boolean
+UPDATE feedback SET flagged = NOT flagged WHERE id=7

@@ -10,13 +10,13 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
+import Checkbox from '@mui/material/Checkbox';
 // mui 'confirm delete' modal imports
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-
 
 function Admin( props ){
     // hook for array of responses
@@ -25,6 +25,7 @@ function Admin( props ){
     const [open, setOpen] = useState(false);
     // hook for id of item to delete
     const [idToDelete, setIdToDelete] = useState(0);
+
     
     //make GET call on page load
     useEffect(()=>{
@@ -69,6 +70,20 @@ function Admin( props ){
     const handleClose = () => {
         setOpen(false);
     };
+    // click handler for checkbox (flag/unflag item)
+    const handleCheck=(itemID) =>{
+        console.log('in handleCheck:', event.target.checked, itemID);
+        // PUT request
+        axios.put(`/feedback/flag?id=${itemID}`).then((response)=>{
+            console.log(response.data);
+            // GET latest database items
+            fetchAnswers();
+        }).catch((err)=>{
+            console.log(err);
+            alert('Error flagging/unflagging item');
+        })
+        
+    }
 
     return(
         <div>
@@ -81,6 +96,7 @@ function Admin( props ){
                         <TableCell align="center">Comprehension</TableCell>
                         <TableCell align="center">Support</TableCell>
                         <TableCell align="center">Comments</TableCell>
+                        <TableCell align="center">Flagged</TableCell>
                         <TableCell align="right">Delete</TableCell>
                     </TableRow>
                 </TableHead>
@@ -93,6 +109,12 @@ function Admin( props ){
                             <TableCell align="center">{row.understanding}</TableCell>
                             <TableCell align="center">{row.support}</TableCell>
                             <TableCell align="center">{row.comments}</TableCell>
+                            <TableCell align="center">
+                                <Checkbox
+                                    checked={row.flagged}
+                                    onChange={()=>{handleCheck(row.id)}}
+                                    inputProps={{ 'aria-label': 'controlled' }}/>
+                            </TableCell>
                             <TableCell align="right">
                                 <IconButton
                                     aria-label='delete'

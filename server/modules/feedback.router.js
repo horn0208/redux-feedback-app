@@ -40,4 +40,16 @@ router.delete('/delete', (req, res)=>{
     })
 })
 
+// PUT to database (toggle flagged true/false)
+router.put('/flag', (req, res)=>{
+    console.log('in router PUT:', req.query.id);
+    const queryString = `UPDATE feedback SET flagged = NOT flagged WHERE id=$1`
+    const values = [req.query.id];
+    pool.query(queryString, values).then((results)=>{
+        res.sendStatus(200);
+    }).catch((err)=>{
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
