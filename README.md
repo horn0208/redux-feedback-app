@@ -12,7 +12,7 @@ All existing feedback is displayed at the route /admin. Most recent feedback app
 
 ## Deployed App
 
-![See it in action on Heroku!](https://evening-brook-21166.herokuapp.com/)
+- [See it in action on Heroku!](https://evening-brook-21166.herokuapp.com/)
 
 
 ## Screen Shots
