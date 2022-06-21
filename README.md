@@ -10,6 +10,10 @@ This is a full-stack CRUD feedback form built with React and Redux which collect
 
 All existing feedback is displayed at the route /admin. Most recent feedback appears at the top of the list. Users may permanently delete existing feedback, and a modal prompts the user to confirm or cancel this action. Users may also flag/unflag feedback items, and these changes are reflected in the database.
 
+## Deployed App
+
+![See it in action on Heroku!](https://evening-brook-21166.herokuapp.com/)
+
 
 ## Screen Shots
 
